@@ -1,0 +1,19 @@
+- name: 'Prepare directory'
+  file:
+    path: /home/www/{{ site.name }}
+    state: directory
+    mode: 0755
+
+- name: 'Add one to sites-available'
+  template: 
+    src: static-site
+    dest: /etc/nginx/sites-available/{{ site.name }}.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: 'Enable site'
+  file:
+    src: /etc/nginx/sites-available/{{ site.name }}.conf
+    dest: /etc/nginx/sites-enabled/{{ site.name }}.conf
+    state: link

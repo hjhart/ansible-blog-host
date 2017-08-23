@@ -1,0 +1,13 @@
+---
+- name: 'Install nginx'
+  package: 
+    name: nginx
+    state: present
+  become: true
+
+- name: 'Install sites'
+  include: site.yml
+  with_items: "{{ sites }}"
+  loop_control:
+    loop_var: site
+          

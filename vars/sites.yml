@@ -1,0 +1,18 @@
+--- 
+nginx:
+  sites:
+    - name: 1911
+      domain: 1911eighteenth.pw
+      document_root: /home/www/1911
+      port: 80
+      server_name: "1911eighteenth.pw www.1911eighteenth.pw"
+    - name: printidiot
+      domain: printidiot.pw
+      port: 80
+      document_root: /home/www/printidiot
+      server_name: "printidiot.pw www.printidiot.pw"
+    - name: hjhart
+      domain: hjhart.blog
+      server_name: "hjhart.blog www.hjhart.blog"
+      document_root: /home/www/hjhart
+      port: 80

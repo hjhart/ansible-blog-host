@@ -1,0 +1,21 @@
+server {
+
+	listen {{ site.port }};
+	server_name {{ site.server_name }};
+
+	root {{ site.document_root }};
+	expires max;  # Cache assets indefinitely
+
+# Ignore files starting with `~`
+		location ~ ^~*$ {
+			return 404;
+		}
+
+	location ~*\.(html)$ {
+		expires 1h;
+	}
+
+# Redirect server error pages to the static page /50x.html
+	error_page 500 502 503 504 /50x.html;
+
+}
