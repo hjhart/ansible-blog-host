@@ -1,0 +1,6 @@
+---
+- name: 'Install git'
+  shell: apt-get -y install {{ item }}
+  become: true
+  with_items:
+    - git
