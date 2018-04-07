@@ -2,14 +2,14 @@
   file:
     path: /home/www/{{ site.name }}
     state: directory
-    mode: 0755
+    mode: 0775
+    owner: www-data
+    group: www-data
 
 - name: 'Add one to sites-available'
   template: 
     src: static-site
     dest: /etc/nginx/sites-available/{{ site.name }}.conf
-    owner: root
-    group: root
     mode: 0644
 
 - name: 'Enable site'

@@ -4,6 +4,7 @@
     - vars/sites.yml
   hosts: "blog"
   roles:
-    # - role: common
+    - role: common
     - role: nginx
       sites: "{{ nginx.sites }}"
+    - role: deploy

@@ -1,0 +1,8 @@
+---
+- name: 'Set up deploy user for capistrano'
+  user:
+    name: deploy
+    shell: /bin/bash
+    groups: www-data
+    append: yes
+    generate_ssh_key: yes

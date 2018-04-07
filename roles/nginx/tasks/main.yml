@@ -10,4 +10,9 @@
   with_items: "{{ sites }}"
   loop_control:
     loop_var: site
+
+- name: 'Restart nginx'
+  service:
+    name: nginx
+    state: restarted
           
